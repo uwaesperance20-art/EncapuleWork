@@ -2,8 +2,9 @@ package Question2;
 
 import java.util.Scanner;
 
-public class Developer extends Payment{
+public class Developer extends Payment {
     int salary;
+
 
     public Developer(Object employee) {
         super(employee);
@@ -11,8 +12,11 @@ public class Developer extends Payment{
 
     @Override
     public int calculateBonus() {
-        return (salary*10)/100;
+        return (salary * 10) / 100;
     }
 
 
+    public void displayInfo() {
+        System.out.println("salary:" + salary);
+    }
 }

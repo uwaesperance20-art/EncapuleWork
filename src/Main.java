@@ -1,6 +1,7 @@
 import Question1.Bike;
 import Question1.Car;
 import Question1.Vehicle;
+import Question2.Developer;
 import Question2.Employee;
 import Question2.Manager;
 
@@ -35,21 +36,43 @@ public class Main {
         System.out.println("2.rentalPrice per days");
         int BikeRentalPrice = scanner.nextInt();
 
-        Scanner scanner1 = new Scanner(System.in);
-        System.out.println("***** SalaryPayCheck*****");
-        System.out.println("Choose your status");
 
-        System.out.println("1.Manager");
-        System.out.println("2. Developer");
-        System.out.println("********");
-        System.out.println("enter your choice");
-        System.out.println("Enter employee Name");
-        String employeeName=scanner.nextLine();
         System.out.println(" Enter employeeId");
         int employeeId=scanner.nextInt();
         System.out.println("Enter employee Salary");
         String employeeStatus=scanner.nextLine();
 
+
+        System.out.println("**** SalaryPaycheck ****");
+        System.out.println("Choose your status:");
+        System.out.println("1. Manager");
+        System.out.println("2. Developer");
+        System.out.println("************************");
+        System.out.print("Enter your choice: ");
+        int choice = Integer.parseInt(scanner.nextLine());
+
+        System.out.print(" Enter Employee ID: ");
+        int id = Integer.parseInt(scanner.nextLine());
+
+        System.out.print("Enter Employee Name: ");
+        String name = scanner.nextLine();
+
+        System.out.print("Enter Salary: ");
+        double salary = Double.parseDouble(scanner.nextLine());
+
+        if (choice == 1) {
+            Employee emp = new Employee("12" , name, "Manager", 100000);
+            Manager manager = new Manager(emp);
+            manager.displayInfo();
+
+        } else if (choice == 2) {
+            Employee emp = new Employee("self", name, "Developer", 100000);
+            Developer developer = new Developer(emp);
+            developer.displayInfo();
+
+        } else {
+            System.out.println("Invalid choice!");
+        }
 
         }
 
